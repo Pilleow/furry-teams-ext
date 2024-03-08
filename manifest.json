@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "Furry Teams Image Source Changer",
+  "version": "1.0",
+  "description": "Changes teams profile pictures to furry profile pictures. That's it.",
+  "permissions": ["activeTab", "tabs"],
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
